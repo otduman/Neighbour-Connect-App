@@ -11,19 +11,9 @@ export default function Profile() {
 
       <div>
         {/* the website name */}
-        <div>
-          <p className="sm:text-xl text-lg flex justify-center sm:justify-start font-bold mb-4">
-            Neighbor Connect
-          </p>
-        </div>
+        
         {/* the options buttons */}
-        <div className="sm:space-x-3 space-x-2 flex flex-wrap space-y-2 justify-center">
-          <Button variant="outlined">My Profile</Button>
-          <Button variant="outlined">Chats</Button>
-          <Button variant="outlined">Offers</Button>
-          <Button variant="outlined">Incidents</Button>
-          <Button variant="outlined">Map</Button>
-        </div>
+        
         {/* profile main contect */}
         <div className="flex border-[1px] border-sky-300 mt-3 sm:h-[750px] h-[1000px] mb-2 bg-sky-50">
           {/* the left side */}

@@ -83,7 +83,7 @@ const CustomCard = () => {
         </div>
       </div>
       <div>
-        <h1 style={neighbourName}>Alexandra  T.</h1>
+        <h1 style={neighbourName}>Alexandr  T.</h1>
         <h2 style={titleStyle}>Water Main Break Floods Downtown</h2>
         <div style={postContent}>
             <img src="public/images/incidentimage1.png" style={imagePost}/>

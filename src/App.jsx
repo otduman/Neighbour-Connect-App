@@ -1,17 +1,48 @@
-import React from "react";
-import LoginPage from "./Pages/LoginPage/LoginPage";
-import Profile from "./Pages/Profile/Profile";
-import Container from "@mui/material/Container";
-import Incidents from "./Pages/Incidents";
+import React, { useState } from 'react';
+import LoginPage from './Pages/LoginPage/LoginPage';
+import Profile from './Pages/Profile/Profile';
+import Container from '@mui/material/Container';
+import Incidents from './Pages/Incidents';
+import Offers from './Pages/Offers';
+import { Button } from "@mui/material";
 
-export default function App() {
+
+const App = () => {
+  const [activeComponent, setActiveComponent] = useState('login');
+
+  const renderComponent = () => {
+    switch (activeComponent) {
+      case 'login':
+        return <LoginPage />;
+      case 'profile':
+        return <Profile />;
+      case 'incidents':
+        return <Incidents />;
+      case 'offers':
+        return <Offers />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div>
-      <Container>
-        <LoginPage />
-        <Profile />
-        <Incidents />
-      </Container>
+      <p className="mt-5 mr-5 sm:text-xl text-lg flex justify-end font-bold mb-4 mr-4 absolute top-0 right-0">
+        Neighbor Connect
+      </p>
+      <div style={{ position: 'relative' }}>
+        <Container>
+          <div className="mb-10 mt-10 flex justify-center items-end space-x-3 sm:space-x-2 sm:flex-wrap sm:space-y-2">
+            <Button variant="outlined" onClick={() => setActiveComponent('login')} sx={{ width: '100px', height: '40px' }}>Login</Button>
+            <Button variant="outlined" onClick={() => setActiveComponent('profile')} sx={{ width: '100px', height: '40px' }}>Profile</Button>
+            <Button variant="outlined" onClick={() => setActiveComponent('incidents')} sx={{ width: '100px', height: '40px' }}>Incidents</Button>
+            <Button variant="outlined" onClick={() => setActiveComponent('offers')} sx={{ width: '100px', height: '40px' }}>Offers</Button>
+          </div>
+          {renderComponent()}
+        </Container>
+      </div>
     </div>
   );
-}
+};
+
+export default App;
