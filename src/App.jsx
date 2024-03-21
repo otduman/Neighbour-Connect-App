@@ -33,10 +33,10 @@ const App = () => {
       <div style={{ position: 'relative' }}>
         <Container>
           <div className="mb-10 mt-10 flex justify-center items-end space-x-3 sm:space-x-2 sm:flex-wrap sm:space-y-2">
-            <Button variant="outlined" onClick={() => setActiveComponent('login')} sx={{ width: '100px', height: '40px' }}>Login</Button>
-            <Button variant="outlined" onClick={() => setActiveComponent('profile')} sx={{ width: '100px', height: '40px' }}>Profile</Button>
-            <Button variant="outlined" onClick={() => setActiveComponent('incidents')} sx={{ width: '100px', height: '40px' }}>Incidents</Button>
-            <Button variant="outlined" onClick={() => setActiveComponent('offers')} sx={{ width: '100px', height: '40px' }}>Offers</Button>
+            <Button variant="outlined" style={{backgroundColor: activeComponent === 'login' ? 'blue' : 'transparent', color: activeComponent === 'login' ? 'white' : '#1976d2' }} onClick={() => setActiveComponent('login')} sx={{ width: '100px', height: '40px' }}>Login</Button>
+            <Button variant="outlined" style={{backgroundColor: activeComponent === 'profile' ? 'blue' : 'transparent', color: activeComponent === 'profile' ? 'white' : '#1976d2' }} onClick={() => setActiveComponent('profile')} sx={{ width: '100px', height: '40px' }}>Profile</Button>
+            <Button variant="outlined" style={{backgroundColor: activeComponent === 'incidents' ? 'blue' : 'transparent', color: activeComponent === 'incidents' ? 'white' : '#1976d2' }} onClick={() => setActiveComponent('incidents')} sx={{ width: '100px', height: '40px' }}>Incidents</Button>
+            <Button variant="outlined" style={{backgroundColor: activeComponent === 'offers' ? 'blue' : 'transparent', color: activeComponent === 'offers' ? 'white' : '#1976d2' }} onClick={() => setActiveComponent('offers')} sx={{ width: '100px', height: '40px' }}>Offers</Button>
           </div>
           {renderComponent()}
         </Container>
